@@ -1,0 +1,18 @@
+@model BookViewModel
+@{
+    var Authors = new SelectList(ViewBag.authors, "Id", "Name");
+  
+}
+<div class="form-group">
+    <label asp-for="@Model.Title" class="col-form-label "></label>
+    <input asp-for="@Model.Title" class="form-control" />
+    <span asp-validation-for="@Model.Title" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="@Model.AuthorId" class="col-form-label "></label>
+    <select asp-for="@Model.AuthorId" asp-items="Authors" class="form-control">
+        <option value="@null">---Select Department---</option>
+    </select>
+    <span asp-validation-for="@Model.AuthorId" class="text-danger"></span>
+</div>
